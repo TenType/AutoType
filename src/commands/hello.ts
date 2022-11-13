@@ -1,5 +1,5 @@
-import { SlashCommandBuilder } from 'discord.js';
 import Command from '../structures/Command';
+import { hideLinkEmbed, hyperlink, SlashCommandBuilder } from 'discord.js';
 
 export default new Command({
     data: new SlashCommandBuilder()
@@ -7,6 +7,11 @@ export default new Command({
         .setDescription('Hello world!'),
 
     async execute(interaction) {
-        interaction.reply('Hello world!');
+        const message = hyperlink(
+            'Hello world!',
+            hideLinkEmbed('https://www.youtube.com/watch?v=j3sks_CJoZ0')
+        );
+
+        interaction.reply(message);
     },
 });
