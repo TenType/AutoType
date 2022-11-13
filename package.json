@@ -6,7 +6,10 @@
   "scripts": {
     "postinstall": "npm run build",
     "build": "tsc",
-    "start": "npm run build && node .",
+    "start": "node .",
+    "deploy:dev": "NODE_ENV=development node dist/deploy-commands.js",
+    "deploy:prod": "NODE_ENV=production node dist/deploy-commands.js",
+    "dev": "NODE_ENV=development npm run build && npm start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "TenType",
