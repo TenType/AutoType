@@ -1,7 +1,7 @@
 import 'dotenv/config';
 
 import { REST, Routes } from 'discord.js';
-import { importCommands } from './utils';
+import { importCommands } from './helpers';
 
 const commands = importCommands(__dirname).map((options) =>
     options.data.toJSON()

@@ -6,7 +6,7 @@ import {
     GatewayIntentBits,
 } from 'discord.js';
 import { CommandProps } from './Command';
-import { importCommands } from '../utils';
+import { importCommands } from '../helpers';
 
 export default class Client extends BaseClient {
     commands = new Collection<string, CommandProps>();
