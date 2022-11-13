@@ -4,7 +4,10 @@
         "module": "CommonJS",
         "strict": true,
         "outDir": "dist",
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "removeComments": true,
     },
-    "include": ["src/**/*"],
+    "include": ["src/**/*", "environment.d.ts"],
     "exclude": ["node_modules"]
 }
