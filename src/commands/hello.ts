@@ -12,6 +12,6 @@ export default new Command({
             hideLinkEmbed('https://www.youtube.com/watch?v=j3sks_CJoZ0')
         );
 
-        interaction.reply(message);
+        await interaction.reply(message);
     },
 });
