@@ -4,7 +4,6 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "postinstall": "npm run build",
     "build": "tsc",
     "start": "node .",
     "deploy:dev": "NODE_ENV=development node dist/deploy-commands.js",
@@ -20,6 +19,7 @@
     "dotenv": "^16.0.3"
   },
   "devDependencies": {
+    "@types/node": "^18.11.9",
     "typescript": "^4.8.4"
   }
 }
