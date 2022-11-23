@@ -7,12 +7,12 @@ import {
     Collection,
     GatewayIntentBits,
 } from 'discord.js';
-import { CommandProps } from './Command';
 import { importCommands } from '../helpers';
 import Event from './Event';
+import Command from './Command';
 
 export default class Client extends BaseClient {
-    commands = new Collection<string, CommandProps>();
+    commands = new Collection<string, Command>();
 
     constructor() {
         super({ intents: [GatewayIntentBits.Guilds] });
@@ -38,9 +38,9 @@ export default class Client extends BaseClient {
 
         for (const file of eventFiles) {
             const filePath = path.join(eventsPath, file);
-            const event = (
-                require(filePath).default as Event<keyof ClientEvents>
-            ).props;
+            const event = require(filePath).default as Event<
+                keyof ClientEvents
+            >;
             if (event.once) {
                 this.once(event.name, (...args) => event.execute(...args));
             } else {

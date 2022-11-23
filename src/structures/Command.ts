@@ -1,10 +1,6 @@
 import { ChatInputCommandInteraction, SlashCommandBuilder } from 'discord.js';
 
-export default class Command {
-    constructor(public props: CommandProps) {}
-}
-
-export interface CommandProps {
+export default interface Command {
     data: SlashCommandBuilder;
     execute: (interaction: ChatInputCommandInteraction) => Promise<void>;
 }

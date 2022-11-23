@@ -2,7 +2,7 @@ import { Events } from 'discord.js';
 import Client from '../structures/Client';
 import Event from '../structures/Event';
 
-export default new Event({
+export default {
     name: Events.InteractionCreate,
     once: false,
     async execute(interaction) {
@@ -27,4 +27,4 @@ export default new Event({
             });
         }
     },
-});
+} satisfies Event<Events.InteractionCreate>;

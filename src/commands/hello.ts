@@ -1,7 +1,7 @@
 import Command from '../structures/Command';
 import { hideLinkEmbed, hyperlink, SlashCommandBuilder } from 'discord.js';
 
-export default new Command({
+export default {
     data: new SlashCommandBuilder()
         .setName('hello')
         .setDescription('Hello world!'),
@@ -14,4 +14,4 @@ export default new Command({
 
         await interaction.reply(message);
     },
-});
+} satisfies Command;
