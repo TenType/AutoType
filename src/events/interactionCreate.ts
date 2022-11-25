@@ -13,7 +13,7 @@ export default {
         );
 
         if (!command) {
-            console.error(`No command matching "${command}" found`);
+            console.error(`No command matching "${interaction.commandName}" found`);
             return;
         }
 
